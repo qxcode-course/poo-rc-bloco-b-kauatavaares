@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-14_13-31-26",
+            "content": "@@ -393,185 +393,8 @@\n     \n-while camisa.getTamanho() == %22%22:%0A        tamanho = input()%0A        camisa.setTamanho(tamanho)%0A%0A    print(f%22Parabens! Voc%C3%AA comprou uma camisa tamanho %7Bcamisa.getTamanho()%7D.%22)%0A%0Amain()\n+line\n",
+            "lines": "19"
+        },
+        {
+            "label": "2025-10-14_13-34-13",
+            "content": "class Camisa:\n    def __init__(self):\n        self.__tamanho: str = \"\"\n\n    def getTamanho(self) -> str:\n        return self.__tamanho\n\n    def setTamanho(self, valor: str):\n        tam_valido = [\"PP\", \"P\", \"M\", \"G\", \"GG\", \"XG\"]\n\n        if valor in tam_valido:\n            self.__tamanho = valor\n        else:\n            print(f\"Erro: tamanho inv\u00e1lido\")\n\ndef main():\n    camisa = Camisa()\n\n    while camisa.getTamanho() == \"\":\n        tamanho = input()\n        camisa.setTamanho(tamanho)\n\n    print(f\"Parabens! Voc\u00ea comprou uma camisa tamanho {camisa.getTamanho()}.\")\n\nmain()",
+            "lines": "25"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+class Notebook:
+    - ligado 
+    + ligar
+    + desligar
+    + mostar 
+    
+    
+
+class Bateria:
