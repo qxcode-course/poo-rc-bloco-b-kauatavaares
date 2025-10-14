@@ -1,0 +1,19 @@
+2025-10-13 18:49:51, MOVE, v:1, k:poo@chinela, mode:PICK
+2025-10-13 18:49:52, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-13 18:49:55, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-13 18:49:55, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-13 18:49:56, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-13 18:49:57, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-13 18:49:57, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-13 18:50:38, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-13 18:50:38, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-13 18:50:38, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-13 18:50:38, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-13 18:50:39, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-13 18:50:39, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-13 18:50:39, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-13 18:50:39, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-13 18:50:39, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-13 18:50:40, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-13 18:50:40, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-13 18:50:40, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
