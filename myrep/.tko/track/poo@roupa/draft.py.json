@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-14_15-17-51",
+            "content": "@@ -823,15 +823,43 @@\n valido%22)\n+%0A%0Aif __name__ == '__main__':\n %0Amain()\n",
+            "lines": "39"
+        },
+        {
+            "label": "2025-10-14_15-18-04",
+            "content": "@@ -413,17 +413,16 @@\n tamanho%7D\n-)\n %22%0A%0Adef m\n",
+            "lines": "37"
+        },
+        {
+            "label": "2025-10-14_15-21-25",
+            "content": "@@ -328,165 +328,57 @@\n t(f%22\n-fail: Valor\n+Erro: tamanho\n  inv\n-a\n+%C3%A1\n lido\n-, tente PP, P, M, G, GG ou XG%22)%0A%0A    def __str__(self):%0A        if self.__tamanho == %22%22:%0A            return %22size: ()%22%0A        else:%0A    \n+%22)%0A%0A    def __str__(self):%0A\n     \n@@ -610,36 +610,36 @@\n lif args%5B0%5D == %22\n-show\n+init\n %22:%0A            c\n@@ -679,19 +679,18 @@\n 0%5D == %22s\n-iz\n e\n+t\n %22:%0A     \n",
+            "lines": "37"
+        },
+        {
+            "label": "2025-10-14_15-27-33",
+            "content": "@@ -749,21 +749,23 @@\n     \n-print(camisa)\n+camisa = Camisa\n %0A   \n@@ -832,16 +832,74 @@\n rgs%5B1%5D)%0A\n+        elif args%5B0%5D == %22show%22:%0A            print(camisa)%0A\n         \n@@ -927,22 +927,8 @@\n nt(%22\n-fail: comando \n inva\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-10-14_15-29-10",
+            "content": "@@ -343,9 +343,9 @@\n  inv\n-%C3%A1\n+a\n lido\n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-10-14_15-29-52",
+            "content": "@@ -675,16 +675,65 @@\n gs%5B0%5D ==\n+ %22end%22:%0A            break%0A        elif args%5B0%5D ==\n  %22show%22:\n@@ -834,57 +834,8 @@\n 1%5D)%0A\n-        elif args%5B0%5D == %22end%22:%0A            break%0A\n     \n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-10-14_15-31-35",
+            "content": "@@ -679,57 +679,8 @@\n %5D ==\n- %22end%22:%0A            break%0A        elif args%5B0%5D ==\n  %22sh\n@@ -781,16 +781,65 @@\n rgs%5B1%5D)%0A\n+        elif args%5B0%5D == %22end%22:%0A            break%0A\n         \n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-10-14_19-53-17",
+            "content": "@@ -618,9 +618,9 @@\n nt(%22\n-$\n+%25\n %22 + \n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-10-14_19-56-59",
+            "content": "class Camisa:\n    def __init__(self):\n        self.__tamanho: str = \"\"\n\n    def getTamanho(self) -> str:\n        return self.__tamanho\n\n    def setTamanho(self, valor: str):\n        tam_valido = [\"PP\", \"P\", \"M\", \"G\", \"GG\", \"XG\"]\n\n        if valor in tam_valido:\n            self.__tamanho = valor\n        else:\n            print(f\"fail: Valor inv\u00e1lido, tente PP, P, M, G, GG ou XG\")\n\n    def __str__(self):\n        if self.__tamanho == \"\":\n            return \"size: ()\"\n        else:\n            return f\"size: ({self.__tamanho})\"\n\ndef main():\n    camisa = Camisa()\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split()\n\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"show\":\n            print(camisa)\n        elif args[0] == \"size\":\n            camisa.setTamanho(args[1])\n        else:\n            print(\"fail: comando invalido\")\nmain()",
+            "lines": "38"
+        }
+    ]
+}

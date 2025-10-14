@@ -8,7 +8,7 @@ sources:
 - database: poo
   link: https://github.com/qxcodepoo/arcade/blob/master/Readme.md
   cache_path: C:\Users\kauas\git_poo\poo-rc-bloco-b-kauatavaares\myrep\.tko\cache\poo.md
-  cache_timestamp: '2025-10-14 13:31:16'
+  cache_timestamp: '2025-10-14 19:45:11'
   filters:
   - acesso
   - simples
@@ -16,7 +16,8 @@ expanded:
 - poo@campanha-principal
 - poo@bloco_b-modificadores-de-acesso
 - poo@bloco_b-agregação-simples
-tasks: {}
+tasks:
+  poo@relogio: '{rate:100}'
 flags:
   quests: 0
   tracks: 0
@@ -24,4 +25,4 @@ flags:
   graph: 0
   xray: 0
 lang: py
-selected: poo@chinela
+selected: poo@roupa

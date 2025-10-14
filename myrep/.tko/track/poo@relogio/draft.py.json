@@ -1,0 +1,99 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-14_14-42-11",
+            "content": "@@ -40,20 +40,16 @@\n ora: int\n- = 0\n , minuto\n@@ -53,20 +53,16 @@\n uto: int\n- = 0\n , segund\n@@ -67,20 +67,16 @@\n ndo: int\n- = 0\n ):%0A     \n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-10-14_14-44-50",
+            "content": "@@ -221,24 +221,25 @@\n eturn self._\n+_\n hora%0A    def\n@@ -280,24 +280,25 @@\n eturn self._\n+_\n minuto%0A    d\n@@ -342,24 +342,25 @@\n eturn self._\n+_\n segundo%0A%0A   \n@@ -432,24 +432,25 @@\n       self._\n+_\n hora = hora%0A\n@@ -600,32 +600,33 @@\n           self._\n+_\n minuto = minuto%0A\n@@ -781,32 +781,33 @@\n           self._\n+_\n segundo = segund\n@@ -935,24 +935,25 @@\n rn f%22%7Bself._\n+_\n hora:02d%7D:%7Bs\n@@ -953,24 +953,25 @@\n 02d%7D:%7Bself._\n+_\n minuto:2d%7D:%7B\n@@ -972,24 +972,25 @@\n :2d%7D:%7Bself._\n+_\n segundo:2d%7D%22\n@@ -1023,32 +1023,33 @@\n :%0A        self._\n+_\n segundo += 1%0A   \n@@ -1058,24 +1058,25 @@\n    if self._\n+_\n segundo == 6\n@@ -1096,16 +1096,17 @@\n   self._\n+_\n segundo \n@@ -1123,24 +1123,25 @@\n       self._\n+_\n minuto += 1%0A\n@@ -1157,24 +1157,25 @@\n    if self._\n+_\n minuto == 60\n@@ -1198,16 +1198,17 @@\n   self._\n+_\n minuto =\n@@ -1228,24 +1228,25 @@\n       self._\n+_\n hora += 1%0A  \n@@ -1264,24 +1264,25 @@\n    if self._\n+_\n hora == 24:%0A\n@@ -1307,16 +1307,17 @@\n   self._\n+_\n hora = 0\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-10-14_14-46-11",
+            "content": "@@ -1337,20 +1337,8 @@\n ogio\n-(00, 00, 00)\n %0A%0A  \n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-10-14_14-48-32",
+            "content": "@@ -1340,12 +1340,14 @@\n o(00\n-:00:\n+, 00, \n 00)%0A\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-10-14_14-48-50",
+            "content": "@@ -1339,13 +1339,14 @@\n io(0\n-, 0, \n+0:00:0\n 0)%0A%0A\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-10-14_14-49-35",
+            "content": "@@ -1341,13 +1341,11 @@\n (0, \n-0\n 0, \n-0\n 0)%0A%0A\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-10-14_14-49-49",
+            "content": "@@ -1340,11 +1340,13 @@\n o(0,\n+ \n 00,\n+ \n 00)%0A\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-10-14_14-50-01",
+            "content": "@@ -1334,16 +1334,23 @@\n Relogio(\n+0,00,00\n )%0A%0A    w\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-10-14_14-51-09",
+            "content": "@@ -1338,15 +1338,8 @@\n gio(\n-0, 0, 0\n )%0A%0A \n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-10-14_14-51-37",
+            "content": "@@ -1339,16 +1339,13 @@\n io(0\n-0\n , \n-0\n 0, \n-0\n 0)%0A%0A\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-10-14_14-51-53",
+            "content": "@@ -957,17 +957,16 @@\n _minuto:\n-0\n 2d%7D:%7Bsel\n@@ -976,17 +976,16 @@\n segundo:\n-0\n 2d%7D%22%0A%0A  \n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-10-14_14-53-08",
+            "content": "@@ -482,15 +482,9 @@\n nt(%22\n-fail: h\n+H\n ora \n@@ -491,16 +491,40 @@\n inv%EC%B9%98lida\n+! Deve ser entre 0 e 23.\n %22)%0A    d\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-10-14_14-53-52",
+            "content": "@@ -492,17 +492,17 @@\n hora inv\n-a\n+%EC%B9%98\n lida%22)%0A \n@@ -641,25 +641,25 @@\n (%22Minuto inv\n-%C3%A1\n+%EC%B9%98\n lido! Deve s\n@@ -824,25 +824,25 @@\n %22Segundo inv\n-%C3%A1\n+%EC%B9%98\n lido! Deve s\n@@ -1910,9 +1910,9 @@\n  inv\n-%C3%A1\n+%EC%B9%98\n lido\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-10-14_14-54-01",
+            "content": "@@ -639,15 +639,9 @@\n nt(%22\n-fail: m\n+M\n inut\n@@ -645,21 +645,45 @@\n nuto inv\n-a\n+%C3%A1\n lido\n+! Deve ser entre 0 e 59.\n %22)%0A    d\n@@ -821,15 +821,9 @@\n nt(%22\n-fail: s\n+S\n egun\n@@ -832,13 +832,37 @@\n  inv\n-a\n+%C3%A1\n lido\n+! Deve ser entre 0 e 59.\n %22)%0A%0A\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-10-14_14-54-44",
+            "content": "@@ -221,25 +221,24 @@\n eturn self._\n-_\n hora%0A    def\n@@ -279,25 +279,24 @@\n eturn self._\n-_\n minuto%0A    d\n@@ -340,25 +340,24 @@\n eturn self._\n-_\n segundo%0A%0A   \n@@ -429,25 +429,24 @@\n       self._\n-_\n hora = hora%0A\n@@ -578,33 +578,32 @@\n           self._\n-_\n minuto = minuto%0A\n@@ -740,33 +740,32 @@\n           self._\n-_\n segundo = segund\n@@ -875,25 +875,24 @@\n rn f%22%7Bself._\n-_\n hora:02d%7D:%7Bs\n@@ -892,25 +892,24 @@\n 02d%7D:%7Bself._\n-_\n minuto:02d%7D:\n@@ -911,25 +911,24 @@\n 02d%7D:%7Bself._\n-_\n segundo:02d%7D\n@@ -962,33 +962,32 @@\n :%0A        self._\n-_\n segundo += 1%0A   \n@@ -996,25 +996,24 @@\n    if self._\n-_\n segundo == 6\n@@ -1033,17 +1033,16 @@\n   self._\n-_\n segundo \n@@ -1059,25 +1059,24 @@\n       self._\n-_\n minuto += 1%0A\n@@ -1092,25 +1092,24 @@\n    if self._\n-_\n minuto == 60\n@@ -1132,17 +1132,16 @@\n   self._\n-_\n minuto =\n@@ -1161,25 +1161,24 @@\n       self._\n-_\n hora += 1%0A  \n@@ -1196,25 +1196,24 @@\n    if self._\n-_\n hora == 24:%0A\n@@ -1238,17 +1238,16 @@\n   self._\n-_\n hora = 0\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-10-14_14-56-43",
+            "content": "@@ -86,85 +86,8 @@\n 0):%0A\n-        self.__hora = 0%0A        self.__minuto = 0%0A        self.__segundo = 0%0A\n     \n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-10-14_15-20-04",
+            "content": "@@ -1884,16 +1884,17 @@\n  == %22nex\n+t\n %22:%0A     \n",
+            "lines": "69"
+        },
+        {
+            "label": "2025-10-14_19-45-28",
+            "content": "@@ -1884,17 +1884,16 @@\n  == %22nex\n-t\n %22:%0A     \n",
+            "lines": "69"
+        },
+        {
+            "label": "2025-10-14_19-46-08",
+            "content": "class Relogio:\n    def __init__(self, hora: int = 0, minuto: int = 0, segundo: int = 0):\n        self.__hora = 0\n        self.__minuto = 0\n        self.__segundo = 0\n        self.setHora(hora)\n        self.setMinuto(minuto)\n        self.setSegundo(segundo)\n\n    def getHora(self) -> int:\n        return self.__hora\n    def getMinuto(self) -> int:\n        return self.__minuto\n    def getSegundo(self) -> int:\n        return self.__segundo\n\n    def setHora(self, hora: int):\n        if 0 <= hora <= 23:\n            self.__hora = hora\n        else:\n            print(\"fail: hora invalida\")\n    def setMinuto(self, minuto: int):\n        if 0 <= minuto <= 59:\n            self.__minuto = minuto\n        else:\n            print(\"fail: minuto invalido\")\n    def setSegundo(self, segundo: int):\n        if 0 <= segundo <= 59:\n            self.__segundo = segundo\n        else:\n            print(\"fail: segundo invalido\")\n\n    def __str__(self) -> str:\n        return f\"{self.__hora:02d}:{self.__minuto:02d}:{self.__segundo:02d}\"\n\n    def nextSecond(self):\n        self.__segundo += 1\n        if self.__segundo == 60:\n            self.__segundo = 0\n            self.__minuto += 1\n            if self.__minuto == 60:\n                self.__minuto = 0\n                self.__hora += 1\n                if self.__hora == 24:\n                    self.__hora = 0\n\ndef main():\n    relogio = Relogio(00, 00, 00)\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split()\n\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"init\":\n            relogio = Relogio(int(args[1]), int(args[2]), int(args[3]))\n        elif args[0] == \"set\":\n            relogio.setHora(int(args[1]))\n            relogio.setMinuto(int(args[2]))\n            relogio.setSegundo(int(args[3]))\n        elif args[0] == \"show\":\n            print(relogio)\n        elif args[0] == \"next\":\n            relogio.nextSecond()\n        else:\n            print(\"comando inv\u00e1lido\")\nmain()\n",
+            "lines": "69"
+        }
+    ]
+}
