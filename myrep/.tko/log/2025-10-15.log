@@ -1,0 +1,24 @@
+2025-10-15 15:05:47, MOVE, v:1, k:poo@chinela, mode:PICK
+2025-10-15 15:07:46, MOVE, v:1, k:poo@chinela, mode:BACK
+2025-10-15 15:07:48, MOVE, v:1, k:poo@chinela, mode:PICK
+2025-10-15 15:07:49, EXEC, v:1, k:poo@chinela, mode:FREE
+2025-10-15 15:08:28, MOVE, v:1, k:poo@chinela, mode:PICK
+2025-10-15 15:08:28, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-15 15:08:30, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-15 15:08:30, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-15 15:08:30, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-15 15:08:30, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-15 15:08:31, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-15 15:08:31, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-15 15:08:31, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-15 15:08:31, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-15 15:08:31, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-15 15:08:31, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-15 15:08:31, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0
+2025-10-15 15:08:32, MOVE, v:1, k:poo@chinela, mode:BACK
+2025-10-15 15:09:20, MOVE, v:1, k:poo@camisa, mode:PICK
+2025-10-15 15:09:21, EXEC, v:1, k:poo@camisa, mode:LOCK, rate:0
+2025-10-15 15:32:19, MOVE, v:1, k:poo@grafite, mode:DOWN
+2025-10-15 15:32:21, MOVE, v:1, k:poo@motouber, mode:DOWN
+2025-10-15 15:32:23, MOVE, v:1, k:poo@tamagotchi, mode:DOWN
+2025-10-15 15:32:24, MOVE, v:1, k:poo@charger, mode:DOWN

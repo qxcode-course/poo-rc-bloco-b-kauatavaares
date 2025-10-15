@@ -34,7 +34,6 @@ class Carregador:
         print(f"(Potência {self.__potencia})")
 
 
-
 class Notebook:
     def __init__(self):
         self.__ligado: bool = False
