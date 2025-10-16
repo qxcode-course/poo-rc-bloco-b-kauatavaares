@@ -22,3 +22,6 @@
 2025-10-15 15:32:21, MOVE, v:1, k:poo@motouber, mode:DOWN
 2025-10-15 15:32:23, MOVE, v:1, k:poo@tamagotchi, mode:DOWN
 2025-10-15 15:32:24, MOVE, v:1, k:poo@charger, mode:DOWN
+2025-10-15 20:06:08, MOVE, v:1, k:poo@motoca, mode:PICK
+2025-10-15 20:06:09, EXEC, v:1, k:poo@motoca, mode:FULL, rate:0, size:35
+2025-10-15 20:06:13, MOVE, v:1, k:poo@motoca, mode:BACK

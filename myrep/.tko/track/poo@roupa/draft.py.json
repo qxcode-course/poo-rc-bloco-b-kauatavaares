@@ -42,6 +42,21 @@
         },
         {
             "label": "2025-10-14_19-56-59",
+            "content": "@@ -787,16 +787,17 @@\n  == %22siz\n+e\n %22:%0A     \n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-10-16_09-52-10",
+            "content": "@@ -751,16 +751,22 @@\n   print(\n+camisa\n )%0A      \n@@ -787,17 +787,16 @@\n  == %22siz\n-e\n %22:%0A     \n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-10-16_09-52-42",
+            "content": "@@ -751,22 +751,16 @@\n   print(\n-camisa\n )%0A      \n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-10-16_09-53-15",
             "content": "class Camisa:\n    def __init__(self):\n        self.__tamanho: str = \"\"\n\n    def getTamanho(self) -> str:\n        return self.__tamanho\n\n    def setTamanho(self, valor: str):\n        tam_valido = [\"PP\", \"P\", \"M\", \"G\", \"GG\", \"XG\"]\n\n        if valor in tam_valido:\n            self.__tamanho = valor\n        else:\n            print(f\"fail: Valor inv\u00e1lido, tente PP, P, M, G, GG ou XG\")\n\n    def __str__(self):\n        if self.__tamanho == \"\":\n            return \"size: ()\"\n        else:\n            return f\"size: ({self.__tamanho})\"\n\ndef main():\n    camisa = Camisa()\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split()\n\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"show\":\n            print(camisa)\n        elif args[0] == \"size\":\n            camisa.setTamanho(args[1])\n        else:\n            print(\"fail: comando invalido\")\nmain()",
             "lines": "38"
         }
