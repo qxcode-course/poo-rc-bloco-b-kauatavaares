@@ -111,3 +111,6 @@
 2025-10-16 15:41:56, EXEC, v:1, k:poo@motoca, mode:FULL, rate:100
 2025-10-16 15:42:00, MOVE, v:1, k:poo@motoca, mode:BACK
 2025-10-16 15:42:13, SELF, v:1, k:poo@motoca, rate:100, alone:10
+2025-10-16 15:45:20, MOVE, v:1, k:poo@grafite, mode:PICK
+2025-10-16 15:45:22, EXEC, v:1, k:poo@grafite, mode:FULL, rate:0, size:0
+2025-10-16 15:45:25, MOVE, v:1, k:poo@grafite, mode:BACK
