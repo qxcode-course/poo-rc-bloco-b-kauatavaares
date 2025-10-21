@@ -8,7 +8,7 @@ sources:
 - database: poo
   link: https://github.com/qxcodepoo/arcade/blob/master/Readme.md
   cache_path: C:\Users\kauas\git_poo\poo-rc-bloco-b-kauatavaares\myrep\.tko\cache\poo.md
-  cache_timestamp: '2025-10-21 07:59:41'
+  cache_timestamp: '2025-10-21 16:29:23'
   filters:
   - acesso
   - simples
@@ -17,11 +17,12 @@ expanded:
 - poo@bloco_b-agregação-simples
 - poo@bloco_b-modificadores-de-acesso
 tasks:
-  poo@chinela: '{rate:100, alone:10}'
-  poo@camisa: '{rate:100, alone:10}'
-  poo@roupa: '{rate:100, alone:10}'
-  poo@relogio: '{rate:100, alone:10}'
-  poo@motoca: '{rate:100, alone:10}'
+  poo@chinela: '{rate:100, human:SIM, guide:sim, other:sim, alone:10}'
+  poo@camisa: '{rate:100, human:SIM, guide:SIM, other:SIM, alone:10}'
+  poo@roupa: '{rate:100, human:SIM, guide:sim, other:sim, alone:10}'
+  poo@relogio: '{rate:100, human:sim, guide:sim, other:sim, alone:10}'
+  poo@motoca: '{rate:100, human:sim, guide:sim, other:sim, alone:10}'
+  poo@grafite: '{rate:100, human:sim, guide:sim, other:sim, alone:10}'
 flags:
   quests: 0
   tracks: 1
@@ -29,4 +30,4 @@ flags:
   graph: 1
   xray: 0
 lang: py
-selected: poo@grafite
+selected: poo@motouber

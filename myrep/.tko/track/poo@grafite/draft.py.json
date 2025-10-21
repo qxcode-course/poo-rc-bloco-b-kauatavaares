@@ -2,8 +2,393 @@
     "patches": [
         {
             "label": "2025-10-16_15-45-22",
-            "content": "",
+            "content": "@@ -1,709 +0,0 @@\n-class Grafite:%0A    def __init__(self, calibre: float, dureza: str, tamanho: int):%0A        self.calibre = float(calibre)%0A        self.dureza = dureza%0A        self.size = int(tamanho)%0A%0A    def usagePerSheet(self) -%3E int:%0A        gasto = %7B%0A            %22HB%22: 1,%0A            %222B%22: 2,%0A            %224B%22: 4,%0A            %226B%22: 6%0A        %7D%0A        return gasto.get(self.dureza, 0)%0A%0A    def __str__(self):%0A        return f%22%7Bself.calibre%7D:%7Bself.dureza%7D:%7Bself.size%7D%22%0A%0A%0Aclass Lapiseira:%0A    def __init__(self, calibre: float = None):%0A        if calibre is None:%0A            self.calibre = None%0A        else:%0A            self.calibre = float(calibre)%0A        self.ponta: Grafite %7C None = None%0A%0A    def hasGrafite(self) -%3E :%0A\n",
             "lines": "0"
+        },
+        {
+            "label": "2025-10-21_08-14-00",
+            "content": "@@ -449,10 +449,8 @@\n ize%7D\n-mm\n %22%0A%0A%0A\n@@ -704,99 +704,6 @@\n  -%3E \n-bool:%0A        return self.ponta is not None%0A%0A    def insert(self, grafite: Grafite) -%3E bool:%0A%0A\n+:\n %0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2025-10-21_14-07-38",
+            "content": "@@ -799,1385 +799,6 @@\n ol:%0A\n-        if self.calibre is None:%0A            print(%22fail: calibre incompativel%22)%0A            return False%0A        if abs(self.calibre - float(grafite.calibre)) %3E 1e-9:%0A            print(%22fail: calibre incompativel%22)%0A            return False%0A        if self.ponta is not None:%0A            print(%22fail: ja tem grafite%22)%0A        self.ponta = grafite%0A        return True%0A%0A    def remover(self):%0A        if self.ponta is None:%0A            print(%22fail: nao tem grafite%22)%0A            return None%0A        p = self.ponta%0A        self.ponta = None%0A        return p%0A%0A    def writePage(self):%0A        if self.ponta is None:%0A            print(%22fail: nao tem grafite%22)%0A            return False%0A        if self.ponta.size %3C= 10:%0A            print(%22fail: tamanho insuficiente%22)%0A            return False%0A        usage = self.ponta.usagePerSheet()%0A        if usage %3C= 10:%0A            print(%22fail: dureza invalida%22)%0A            return False%0A        if (self.ponta.size - usage) %3C 10:%0A            self.ponta.size = 10%0A            print(%22fail: folha incompleta%22)%0A            return False%0A        else:%0A            self.ponta.size -= usage%0A            return True%0A%0A    def __str__(self):%0A        if self.calibre is not None:%0A            calibre = str(self.calibre)%0A        else:%0A            calibre = %22None%22%0A        if self.ponta is None:%0A            return f%22lapiseira calibre:%7Bcalibre%7D, tipo:%7Bvazio%7D%22\n+%0A\n %0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2025-10-21_15-02-01",
+            "content": "@@ -2171,430 +2171,13 @@\n ipo:\n-(\n+%7B\n vazio\n-)%22%0A        else:%0A            return f%22lap calibre;%7Bcalibre%7D, tipo%7Bself.ponta.calibre%7D:%7Bself.ponta.dureza%7D:%7Bself.ponta.size%7Dmm%22%0Adef main():%0A    lapiseira = Lapiseira%0A    while True:%0A        line = input()%0A        print(%22$%22 + line)%0A        args = line.split()%0A%0A        if args%5B0%5D == %22end%22:%0A            break%0A        elif args%5B0%5D == %22init%22:%0A            calibre = float(args%5B1%5D)%0A            lapiseira = Lapiseira(calibre)%0A%0A\n+%7D%22\n %0A\n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-10-21_15-20-16",
+            "content": "@@ -2595,236 +2595,6 @@\n re)%0A\n-        elif args%5B0%5D == %22insert%22:%0A            calibre = float(args%5B1%5D)%0A            dureza = args%5B2%5D%0A            tamanho = int(args%5B3%5D)%0A            grafite = Grafite(calibre, dureza, tamanho)%0A            lapiseira.insert(grafite)%0A%0A\n %0A%0A\n",
+            "lines": "92"
+        },
+        {
+            "label": "2025-10-21_15-24-48",
+            "content": "@@ -2483,69 +2483,8 @@\n eak%0A\n-        elif args%5B0%5D == %22show%22:%0A            print(lapiseira)%0A\n     \n@@ -2823,9 +2823,8 @@\n ite)%0A%0A%0A%0A\n-%0A\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-10-21_15-25-47",
+            "content": "@@ -2885,85 +2885,8 @@\n te)%0A\n-        elif args%5B0%5D == %22remover%22:%0A            grafite = lapiseira.remover()%0A\n %0A%0A%0A%0A\n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-10-21_15-27-50",
+            "content": "@@ -2958,13 +2958,12 @@\n mover()%0A%0A%0A%0A%0A\n-%0A\n",
+            "lines": "104"
+        },
+        {
+            "label": "2025-10-21_15-31-26",
+            "content": "@@ -2962,126 +2962,8 @@\n r()%0A\n-            if grafite is not None:%0A                print(f%22%7Bint(grafite.calibre)%7D:%7Bgrafite.dureza%7D:%7Bgrafite.size%7D%22)%0A%0A\n %0A%0A%0A%0A\n",
+            "lines": "105"
+        },
+        {
+            "label": "2025-10-21_15-33-17",
+            "content": "@@ -2479,16 +2479,77 @@\n   break%0A\n+        elif args%5B0%5D == %22show%22:%0A            print(lapiseira)%0A\n         \n@@ -3079,200 +3079,8 @@\n %7D%22)%0A\n-        elif args%5B0%5D == %22write%22:%0A            lapiseira.writePage()%0A        elif args%5B0%5D == %22show%22:%0A            print(lapiseira)%0A        else:%0A            print(%22fail: comando invalido%22)%0Amain()\n %0A%0A%0A%0A\n",
+            "lines": "108"
+        },
+        {
+            "label": "2025-10-21_15-35-43",
+            "content": "@@ -2133,16 +2133,26 @@\n eturn f%22\n+lapiseira \n calibre:\n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_15-38-17",
+            "content": "@@ -2156,21 +2156,19 @@\n e%7D, \n-grafite:(null\n+tipo:(vazio\n )%22%0A \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_15-38-44",
+            "content": "@@ -2151,16 +2151,17 @@\n alibre%7D,\n+ \n grafite:\n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_15-38-55",
+            "content": "@@ -2151,17 +2151,16 @@\n alibre%7D,\n- \n grafite:\n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_15-39-13",
+            "content": "@@ -2141,17 +2141,16 @@\n calibre:\n- \n %7Bcalibre\n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_15-39-27",
+            "content": "@@ -2165,14 +2165,14 @@\n ite:\n-  \n+(\n null\n+)\n %22%0A  \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_15-39-43",
+            "content": "@@ -2161,16 +2161,17 @@\n grafite:\n+ \n  null%22%0A \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_15-39-49",
+            "content": "@@ -2199,24 +2199,28 @@\n    return f%22\n+lap \n calibre;%7Bcal\n@@ -2226,23 +2226,20 @@\n libre%7D, \n-grafite\n+tipo\n %7Bself.po\n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_15-43-11",
+            "content": "@@ -2202,34 +2202,33 @@\n return f%22calibre\n-: \n+;\n %7Bcalibre%7D, grafi\n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_15-43-19",
+            "content": "@@ -2230,18 +2230,16 @@\n  grafite\n-: \n %7Bself.po\n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_15-43-28",
+            "content": "@@ -2232,17 +2232,16 @@\n rafite: \n-%5B\n %7Bself.po\n@@ -2290,17 +2290,18 @@\n ta.size%7D\n-%5D\n+mm\n %22%0Adef ma\n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_15-44-03",
+            "content": "@@ -1103,14 +1103,11 @@\n  ja \n-exis\n te\n+m\n  gra\n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_15-45-20",
+            "content": "@@ -1120,33 +1120,8 @@\n e%22)%0A\n-            return False%0A\n     \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_15-48-17",
+            "content": "@@ -3164,16 +3164,73 @@\n iseira)%0A\n+        else:%0A            print(%22fail: comando invalido%22)\n %0Amain()%0A\n",
+            "lines": "113"
+        },
+        {
+            "label": "2025-10-21_16-01-04",
+            "content": "@@ -3018,16 +3018,31 @@\n .dureza%7D\n+:%7Bgrafite.size%7D\n %22)%0A     \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-01-38",
+            "content": "@@ -2260,16 +2260,17 @@\n rafite: \n+%5B\n %7Bself.po\n@@ -2319,16 +2319,17 @@\n ta.size%7D\n+%5D\n %22%0Adef ma\n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-02-24",
+            "content": "@@ -2260,17 +2260,16 @@\n rafite: \n-%5B\n %7Bself.po\n@@ -2318,17 +2318,16 @@\n ta.size%7D\n-%5D\n %22%0Adef ma\n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-02-29",
+            "content": "@@ -3116,16 +3116,17 @@\n  == %22sho\n+w\n %22:%0A     \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-03-56",
+            "content": "@@ -3116,17 +3116,16 @@\n  == %22sho\n-w\n %22:%0A     \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-04-01",
+            "content": "@@ -2194,14 +2194,12 @@\n te: \n-%7BNone%7D\n+null\n %22%0A  \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-06-58",
+            "content": "@@ -2194,12 +2194,14 @@\n te: \n-null\n+%7BNone%7D\n %22%0A  \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-07-09",
+            "content": "@@ -2941,24 +2941,28 @@\n  grafite is \n+not \n None:%0A      \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-09-36",
+            "content": "@@ -2941,28 +2941,24 @@\n  grafite is \n-not \n None:%0A      \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-09-49",
+            "content": "@@ -2941,24 +2941,28 @@\n  grafite is \n+not \n None:%0A      \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-09-57",
+            "content": "@@ -2941,28 +2941,24 @@\n  grafite is \n-not \n None:%0A      \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-10-06",
+            "content": "@@ -1288,16 +1288,39 @@\n afite%22)%0A\n+            return None\n %0A       \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-12-02",
+            "content": "@@ -1284,32 +1284,33 @@\n m grafite%22)%0A\n+%0A\n         \n     return N\n@@ -1301,24 +1301,65 @@\n     \n-    return None%0A\n+p = self.ponta%0A        self.ponta = None%0A        return p\n %0A%0A  \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-12-15",
+            "content": "@@ -1316,73 +1316,8 @@\n one%0A\n-        p = self.ponta%0A        self.ponta = None%0A        return p\n %0A%0A  \n@@ -2129,14 +2129,12 @@\n te: \n-%7BNone%7D\n+null\n %22%0A  \n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-10-21_16-13-43",
+            "content": "@@ -2194,12 +2194,14 @@\n te: \n-null\n+%7BNone%7D\n %22%0A  \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-14-01",
+            "content": "@@ -2013,16 +2013,23 @@\n calibre \n+is not \n None:%0A  \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-14-42",
+            "content": "@@ -2017,12 +2017,8 @@\n bre \n-is  \n None\n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-15-09",
+            "content": "@@ -2012,27 +2012,24 @@\n .calibre is \n-not\n  None:%0A     \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-15-19",
+            "content": "@@ -1280,32 +1280,56 @@\n o tem grafite%22)%0A\n+            return None%0A\n         p = self\n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-15-53",
+            "content": "@@ -1280,32 +1280,55 @@\n o tem grafite%22)%0A\n+        p = self.ponta%0A\n         self.pon\n@@ -1337,16 +1337,32 @@\n  = None%0A\n+        return p\n %0A%0A    de\n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-10-21_16-16-27",
+            "content": "@@ -1292,31 +1292,8 @@\n e%22)%0A\n-        p = self.ponta%0A\n     \n@@ -1318,24 +1318,8 @@\n one%0A\n-        return p\n %0A%0A  \n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-10-21_16-16-44",
+            "content": "@@ -1288,16 +1288,64 @@\n afite%22)%0A\n+        p = self.ponta%0A        self.ponta = None\n %0A       \n@@ -1352,20 +1352,17 @@\n  return \n-None\n+p\n %0A%0A    de\n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-10-21_16-17-24",
+            "content": "@@ -1191,16 +1191,134 @@\n n True%0A%0A\n+    def remover(self):%0A        if self.ponta is None:%0A            print(%22fail: nao tem grafite%22)%0A%0A        return None%0A\n %0A    def\n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-10-21_16-17-35",
+            "content": "@@ -1195,171 +1195,8 @@\n ue%0A%0A\n-    def remover(self):%0A        if self.ponta is None:%0A            print(%22fail: nao tem grafite%22)%0A        p = self.ponta%0A        self.ponta = None%0A        return p%0A\n %0A   \n@@ -1922,17 +1922,16 @@\n  %22None%22%0A\n-%0A\n         \n@@ -1951,16 +1951,81 @@\n  is \n-not  Non\n+None:%0A            return f%22calibre: %7Bcalibre%7D, grafite: null%22%0A        els\n e:%0A \n@@ -2139,78 +2139,8 @@\n %7D%5D%22%0A\n-        else:%0A            return f%22calibre: %7Bcalibre%7D, grafite: null%22%0A\n def \n",
+            "lines": "105"
+        },
+        {
+            "label": "2025-10-21_16-18-26",
+            "content": "@@ -1300,25 +1300,65 @@\n     \n-self.ponta = None\n+p = self.ponta%0A        self.ponta = None%0A        return p\n %0A%0A  \n@@ -2085,16 +2085,17 @@\n  %22None%22%0A\n+%0A\n         \n@@ -2107,32 +2107,33 @@\n lf.ponta is not \n+ \n None:%0A          \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-20-15",
+            "content": "@@ -1288,36 +1288,32 @@\n afite%22)%0A        \n-    \n self.ponta = Non\n",
+            "lines": "109"
+        },
+        {
+            "label": "2025-10-21_16-21-19",
+            "content": "@@ -1292,36 +1292,32 @@\n e%22)%0A            \n-    \n self.ponta = Non\n",
+            "lines": "109"
+        },
+        {
+            "label": "2025-10-21_16-21-33",
+            "content": "@@ -1292,32 +1292,36 @@\n e%22)%0A            \n+    \n self.ponta = Non\n",
+            "lines": "109"
+        },
+        {
+            "label": "2025-10-21_16-21-39",
+            "content": "@@ -1296,27 +1296,8 @@\n     \n-    p = self.ponta%0A\n     \n@@ -1321,25 +1321,8 @@\n None\n-%0A        return p\n %0A%0A  \n",
+            "lines": "109"
+        },
+        {
+            "label": "2025-10-21_16-24-09",
+            "content": "@@ -1231,36 +1231,32 @@\n f self.ponta is \n-not \n None:%0A          \n@@ -1256,33 +1256,47 @@\n         \n-return self.ponta\n+ print(%22fail: nao tem grafite%22)\n %0A       \n@@ -1296,20 +1296,19 @@\n         \n-elif\n+p =\n  self.po\n@@ -1314,82 +1314,35 @@\n onta\n- is None:%0A            return %22fail: nao existe grafite%22%0A        else:%0A    \n+%0A        self.ponta = None%0A\n     \n@@ -1352,20 +1352,17 @@\n  return \n-None\n+p\n %0A%0A    de\n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-10-21_16-27-55",
+            "content": "@@ -1303,32 +1303,92 @@\n .ponta is None:%0A\n+            return %22fail: nao existe grafite%22%0A        else:%0A\n             retu\n@@ -1396,17 +1396,16 @@\n n None%0A%0A\n-%0A\n     def \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-29-02",
+            "content": "@@ -1334,34 +1334,12 @@\n urn \n-%22fail: nao existe grafite%22\n+None\n %0A%0A%0A \n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-10-21_16-29-27",
+            "content": "@@ -2246,36 +2246,17 @@\n       el\n-if self.ponta is Non\n+s\n e:%0A     \n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-10-21_16-30-20",
+            "content": "@@ -1215,20 +1215,8 @@\n self\n-, valor: int\n ):%0A \n@@ -1252,33 +1252,38 @@\n one:%0A           \n- \n+return\n  self.ponta -= v\n@@ -1281,17 +1281,8 @@\n onta\n- -= valor\n %0A   \n@@ -1311,17 +1311,16 @@\n s None:%0A\n-%0A\n         \n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-10-21_16-33-29",
+            "content": "@@ -1288,34 +1288,21 @@\n onta -= \n-self.ponta.calibre\n+valor\n %0A       \n@@ -1319,32 +1319,33 @@\n .ponta is None:%0A\n+%0A\n             retu\n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_16-35-07",
+            "content": "@@ -1207,24 +1207,36 @@\n remover(self\n+, valor: int\n ):%0A        i\n@@ -1264,38 +1264,47 @@\n one:%0A           \n-return\n+  self.ponta -=\n  self.ponta%0A    \n@@ -1298,16 +1298,24 @@\n lf.ponta\n+.calibre\n %0A       \n@@ -1389,15 +1389,8 @@\n ite%22\n- + None\n %0A%0A%0A \n@@ -2267,33 +2267,52 @@\n ze%7D%5D%22%0A        el\n-s\n+if self.ponta is Non\n e:%0A            r\n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-10-21_16-40-27",
+            "content": "@@ -1211,34 +1211,16 @@\n ver(self\n-, grafite: Grafite\n ):%0A     \n@@ -1217,39 +1217,42 @@\n lf):%0A        if \n-grafite\n+self.ponta\n  is not None:%0A  \n@@ -1267,20 +1267,26 @@\n  return \n-None\n+self.ponta\n %0A       \n@@ -1291,23 +1291,26 @@\n    elif \n-grafite\n+self.ponta\n  is None\n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-10-21_16-42-44",
+            "content": "@@ -2870,16 +2870,17 @@\n  %22remove\n+r\n %22:%0A     \n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-10-21_16-44-12",
+            "content": "@@ -2875,32 +2875,9 @@\n ove%22\n- or args%5B0%5D == %22remover%22\n+:\n %0A   \n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-10-21_16-45-33",
+            "content": "@@ -2895,17 +2895,16 @@\n remover%22\n-:\n %0A       \n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-10-21_16-45-46",
+            "content": "@@ -2862,16 +2862,39 @@\n gs%5B0%5D ==\n+ %22remove%22 or args%5B0%5D ==\n  %22remove\n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-10-21_16-46-12",
+            "content": "@@ -1239,37 +1239,38 @@\n %0A        if \n-self.ponta is\n+grafite is not\n  None:%0A     \n@@ -1279,94 +1279,105 @@\n     \n- print(%22fail: nao existe grafite%22)%0A            return None%0A        self.ponta =\n+return None%0A        elif grafite is None:%0A            return %22fail: nao existe grafite%22 +\n  None%0A%0A\n+%0A\n     \n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-10-21_16-48-32",
+            "content": "@@ -1205,16 +1205,17 @@\n f remove\n+r\n (self, g\n@@ -2900,16 +2900,17 @@\n a.remove\n+r\n ()%0A     \n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-10-21_16-53-48",
+            "content": "@@ -2857,16 +2857,17 @@\n  %22remove\n+r\n %22:%0A     \n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-10-21_16-54-50",
+            "content": "@@ -2857,17 +2857,16 @@\n  %22remove\n-r\n %22:%0A     \n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-10-21_16-55-08",
+            "content": "@@ -2334,20 +2334,25 @@\n seira = \n-None\n+Lapiseira\n %0A    whi\n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-10-21_16-55-26",
+            "content": "@@ -1205,22 +1205,39 @@\n f remove\n-r\n (self\n+, grafite: Grafite\n ):%0A     \n@@ -1336,31 +1336,8 @@\n one%0A\n-        g = self.ponta%0A\n     \n@@ -1357,33 +1357,16 @@\n a = None\n-%0A        return g\n %0A%0A    de\n@@ -1436,38 +1436,35 @@\n rint(%22fail: nao \n-exis\n te\n+m\n  grafite%22)%0A     \n@@ -2868,18 +2868,25 @@\n         \n-if\n+grafite =\n  lapisei\n@@ -2887,27 +2887,26 @@\n apiseira\n- is None:%0A \n+.remove()%0A\n         \n@@ -2913,104 +2913,96 @@\n     \n-   print(%22fail: lapiseira nao iniciada%22)%0A                continue%0A            lapiseira.remover(\n+if grafite is not None:%0A                print(f%22%7Bint(grafite.calibre)%7D:%7Bgrafite.dureza%7D%22\n )%0A  \n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-10-21_17-01-36",
+            "content": "@@ -1311,24 +1311,47 @@\n return None%0A\n+        g = self.ponta%0A\n         self\n@@ -1371,36 +1371,33 @@\n %0A        return \n-True\n+g\n %0A%0A    def writeP\n@@ -2884,31 +2884,8 @@\n ver%22\n- or args%5B0%5D == %22remove%22\n :%0A  \n",
+            "lines": "113"
+        },
+        {
+            "label": "2025-10-21_17-04-23",
+            "content": "@@ -2340,25 +2340,20 @@\n seira = \n-Lapiseira\n+None\n %0A    whi\n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_17-05-13",
+            "content": "@@ -1706,16 +1706,40 @@\n alida%22)%0A\n+            return False\n %0A       \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_17-06-21",
+            "content": "@@ -1710,32 +1710,8 @@\n a%22)%0A\n-            return False\n %0A   \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_17-08-34",
+            "content": "@@ -1769,17 +1769,16 @@\n usage) %3C\n-=\n  10:%0A   \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_17-09-06",
+            "content": "@@ -1659,16 +1659,17 @@\n sage %3C= \n+1\n 0:%0A     \n@@ -1769,16 +1769,17 @@\n usage) %3C\n+=\n  10:%0A   \n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-21_17-13-53",
+            "content": "class Grafite:\n    def __init__(self, calibre: float, dureza: str, tamanho: int):\n        self.calibre = float(calibre)\n        self.dureza = dureza\n        self.size = int(tamanho)\n\n    def usagePerSheet(self) -> int:\n        gasto = {\n            \"HB\": 1,\n            \"2B\": 2,\n            \"4B\": 4,\n            \"6B\": 6\n        }\n        return gasto.get(self.dureza, 0)\n\n    def __str__(self):\n        return f\"{self.calibre}:{self.dureza}:{self.size}mm\"\n\n\nclass Lapiseira:\n    def __init__(self, calibre: float = None):\n        if calibre is None:\n            self.calibre = None\n        else:\n            self.calibre = float(calibre)\n        self.ponta: Grafite | None = None\n\n    def hasGrafite(self) -> bool:\n        return self.ponta is not None\n\n    def insert(self, grafite: Grafite) -> bool:\n        if self.calibre is None:\n            print(\"fail: calibre incompativel\")\n            return False\n        if abs(self.calibre - float(grafite.calibre)) > 1e-9:\n            print(\"fail: calibre incompativel\")\n            return False\n        if self.ponta is not None:\n            print(\"fail: ja existe grafite\")\n            return False\n        self.ponta = grafite\n        return True\n\n    def remover(self):\n        if self.ponta is None:\n            print(\"fail: nao existe grafite\")\n            return None\n        self.ponta = None\n        return True\n\n    def writePage(self):\n        if self.ponta is None:\n            print(\"fail: nao existe grafite\")\n            return False\n        if self.ponta.size <= 10:\n            print(\"fail: tamanho insuficiente\")\n            return False\n        usage = self.ponta.usagePerSheet()\n        if usage <= 0:\n            print(\"fail: dureza invalida\")\n            return False\n        if (self.ponta.size - usage) < 10:\n            self.ponta.size = 10\n            print(\"fail: folha incompleta\")\n            return False\n        else:\n            self.ponta.size -= usage\n            return True\n\n    def __str__(self):\n        if self.calibre is not None:\n            calibre = str(self.calibre)\n        else:\n            calibre = \"None\"\n        if self.ponta is not None:\n            return f\"calibre: {calibre}, grafite: [{self.ponta.calibre}:{self.ponta.dureza}:{self.ponta.size}]\"\n        else:\n            return f\"calibre: {calibre}, grafite: null\"\ndef main():\n    lapiseira = Lapiseira\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split()\n\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"init\":\n            calibre = float(args[1])\n            lapiseira = Lapiseira(calibre)\n        elif args[0] == \"insert\":\n            calibre = float(args[1])\n            dureza = args[2]\n            tamanho = int(args[3])\n            grafite = Grafite(calibre, dureza, tamanho)\n            lapiseira.insert(grafite)\n        elif args[0] == \"remover\" or args[0] == \"remove\":\n            if lapiseira is None:\n                print(\"fail: lapiseira nao iniciada\")\n                continue\n            lapiseira.remover()\n        elif args[0] == \"write\":\n            lapiseira.writePage()\n        elif args[0] == \"show\":\n            print(lapiseira)\n\nmain()\n\n\n\n\n\n",
+            "lines": "112"
         }
     ]
 }
