@@ -76,3 +76,21 @@
 2025-10-27 13:30:10, EXEC, v:1, k:poo@motouber, mode:FULL, rate:87, size:138
 2025-10-27 13:32:00, EXEC, v:1, k:poo@motouber, mode:FULL, rate:100, size:138
 2025-10-27 13:32:18, EXEC, v:1, k:poo@motouber, mode:FULL, rate:100
+2025-10-27 13:34:18, SELF, v:1, k:poo@motouber, human:sim, iagen:nao, guide:sim, other:sim, alone:10, study:240
+2025-10-27 13:34:20, MOVE, v:1, k:poo@motouber, mode:PICK
+2025-10-27 13:34:21, EXEC, v:1, k:poo@motouber, mode:FULL, rate:100
+2025-10-27 13:34:23, MOVE, v:1, k:poo@motouber, mode:BACK
+2025-10-27 13:34:31, SELF, v:1, k:poo@grafite, rate:100, human:sim, iagen:nao, guide:sim, other:sim, alone:10
+2025-10-27 13:34:37, SELF, v:1, k:poo@motoca, rate:100, human:sim, iagen:nao, guide:sim, other:sim, alone:10
+2025-10-27 13:34:45, SELF, v:1, k:poo@relogio, rate:100, human:sim, iagen:nao, guide:sim, other:sim, alone:10
+2025-10-27 13:34:52, SELF, v:1, k:poo@roupa, rate:100, human:SIM, iagen:nao, guide:sim, other:sim, alone:10
+2025-10-27 13:34:58, SELF, v:1, k:poo@camisa, rate:100, human:SIM, iagen:nao, guide:SIM, other:SIM, alone:10
+2025-10-27 13:34:58, MOVE, v:1, k:poo@camisa, mode:PICK
+2025-10-27 13:34:59, EXEC, v:1, k:poo@camisa, mode:LOCK, rate:0
+2025-10-27 13:35:00, MOVE, v:1, k:poo@camisa, mode:BACK
+2025-10-27 13:35:07, SELF, v:1, k:poo@chinela, rate:100, human:SIM, iagen:nao, guide:sim, other:sim, alone:10
+2025-10-27 13:35:18, MOVE, v:1, k:poo@notebook, mode:PICK
+2025-10-27 13:35:19, EXEC, v:1, k:poo@notebook, mode:LOCK, rate:100, size:102
+2025-10-27 13:35:20, MOVE, v:1, k:poo@notebook, mode:BACK
+2025-10-27 19:00:25, MOVE, v:1, k:poo@notebook, mode:PICK
+2025-10-27 19:00:26, EXEC, v:1, k:poo@notebook, mode:FREE, size:119

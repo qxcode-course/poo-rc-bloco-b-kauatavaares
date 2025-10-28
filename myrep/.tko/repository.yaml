@@ -8,7 +8,7 @@ sources:
 - database: poo
   link: https://github.com/qxcodepoo/arcade/blob/master/Readme.md
   cache_path: C:\Users\kauas\git_poo\poo-rc-bloco-b-kauatavaares\myrep\.tko\cache\poo.md
-  cache_timestamp: '2025-10-27 13:23:20'
+  cache_timestamp: '2025-10-28 10:17:44'
   filters:
   - acesso
   - simples
@@ -17,12 +17,17 @@ expanded:
 - poo@bloco_b-agregação-simples
 - poo@bloco_b-modificadores-de-acesso
 tasks:
-  poo@chinela: '{rate:100, human:SIM, guide:sim, other:sim, alone:10}'
-  poo@camisa: '{rate:100, human:SIM, guide:SIM, other:SIM, alone:10}'
-  poo@roupa: '{rate:100, human:SIM, guide:sim, other:sim, alone:10}'
-  poo@relogio: '{rate:100, human:sim, guide:sim, other:sim, alone:10}'
-  poo@motoca: '{rate:100, human:sim, guide:sim, other:sim, alone:10}'
-  poo@grafite: '{rate:100, human:sim, guide:sim, other:sim, alone:10}'
+  poo@chinela: '{rate:100, human:SIM, iagen:nao, guide:sim, other:sim, alone:10}'
+  poo@camisa: '{rate:100, human:SIM, iagen:nao, guide:SIM, other:SIM, alone:10}'
+  poo@roupa: '{rate:100, human:SIM, iagen:nao, guide:sim, other:sim, alone:10}'
+  poo@relogio: '{rate:100, human:sim, iagen:nao, guide:sim, other:sim, alone:10}'
+  poo@motoca: '{rate:100, human:sim, iagen:nao, guide:sim, other:sim, alone:10}'
+  poo@grafite: '{rate:100, human:sim, iagen:nao, guide:sim, other:sim, alone:10}'
+  poo@motouber: '{rate:100, human:sim, iagen:nao, guide:sim, other:sim, alone:10,
+    study:240}'
+  poo@notebook: '{rate:100, human:sim, iagen:nao, guide:sim, other:sim, alone:10,
+    study:4320}'
+  poo@charger: '{rate:100, human:sim, iagen:nao, guide:sim, other:sim, alone:10, study:5760}'
 flags:
   quests: 0
   tracks: 1
@@ -30,4 +35,4 @@ flags:
   graph: 1
   xray: 0
 lang: py
-selected: poo@motouber
+selected: poo@charger
